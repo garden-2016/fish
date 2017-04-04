@@ -1,0 +1,245 @@
+.ui-widget-overlay {
+    background-color:#CCCCCC;
+    background-image:url("");
+}
+.tableTitle {
+    clear: both;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 40px;
+    padding: 10px 0;
+    color: #2EAFBB;
+}
+
+.tableTitle_en {
+    clear: both;
+    text-align: center;
+    padding: 10px 0;
+    color: #2EAFBB;
+    font: normal 24px/40px Tahoma, arial, sans-serif;
+}
+
+.yzmBg {
+    height: 128px;
+    *height: 131px;
+    width: 300px;
+}
+
+.div1 {
+    padding-bottom: 20px;
+}
+
+.div2 {
+    width: 628px;
+    padding: 1px;
+    margin: 0 auto;
+}
+
+.div3 {
+    width: 627px;
+    font-size: 16px;
+    border-top: 1px solid #AACED8;
+    border-left: 1px solid #AACED8;
+    background: #FFFFFF;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.div3 td {
+    color: #333333;
+    border-bottom: 1px solid #AACED8;
+    border-right: 1px solid #AACED8;
+    height: 43px;
+    text-align: center;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+#photoPositon {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+
+#yzmPositon {
+    position: absolute;
+    left: 12px;
+    top: 4px;
+}
+
+#yzmPositon td {
+    border: 0px !important;
+}
+
+.title1 {
+    font-family: "黑体";
+}
+
+.title2 {
+    font-family: "黑体";
+    letter-spacing: 5px;
+}
+
+.cnt1 {
+    font-family: "楷体_GB2312";
+    text-align: left;
+    padding-left: 8px;
+    line-height: 43px;
+}
+
+.cnt2 {
+    font-family: "Times New Roman", Times, serif;
+    text-align: left;
+    padding-left: 8px;
+    font-weight: bold;
+    line-height: 43px;
+}
+
+#zdy {
+    width: 625px;
+    overflow: hidden;
+}
+
+#zdy td {
+    border: 0px !important;
+    font-family: "楷体_GB2312";
+    height: auto !important;
+    line-height: 21px;
+    color: #FF0000;
+    text-align: left;
+}
+
+.zdy_td1 {
+    text-align: right !important;
+}
+
+.font1 {
+    font-size: 16px;
+    font-family: "黑体";
+    line-height: 36px;
+    text-align: left;
+}
+
+.zysx {
+    font-family: "宋体";
+    font-size: 14px;
+    width: 560px;
+    margin: 0 auto;
+    line-height: 25px;
+}
+
+.zysx table td {
+    border: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    text-align: left !important;
+}
+
+/*for en-xj table*/
+.en_table {
+    border-top: 1px solid #AACED8;
+    border-left: 1px solid #AACED8;
+    margin: 0 auto;
+    table-layout: fixed;
+}
+
+.en_table_noborder {
+    border-top: none;
+}
+
+.en_table span {
+    padding-left: 5px;
+    display: block;
+}
+
+.en_table th {
+    font: bold 12px/1.5 Tahoma, arial, sans-serif;
+    text-align: left;
+    color: #333333;
+    border-bottom: 1px solid #AACED8;
+    border-right: 1px solid #AACED8;
+    height: 43px;
+}
+
+.en_table td {
+    font: normal 12px/1.5 Tahoma, arial, sans-serif;
+    text-align: left;
+    color: #333333;
+    border-bottom: 1px solid #AACED8;
+    border-right: 1px solid #AACED8;
+    height: 43px;
+}
+
+.en_table h2 {
+    font: bold 14px/40px Tahoma, arial, sans-serif;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.en_table ol {
+    list-style: decimal;
+    padding: 0 20px 0 40px;
+    line-height: 21px;
+}
+
+.en_table ol li {
+    list-style: decimal !important;
+}
+
+.en_photo1_xj {
+    width: 93px;
+    height: 131px;
+    position: relative;
+}
+
+.en_photo1_xj .en_photo1_img {
+    position: absolute;
+    left: 6px;
+    top: 7px;
+}
+
+.en_photo2_xj {
+    width: 334px;
+    height: 131px;
+    position: relative;
+}
+
+.en_photo2_xj .en_photo2_bg {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.en_photo2_xj .en_photo2_2wm {
+    position: absolute;
+    left: 17px;
+    top: 4px;
+}
+
+.en_photo2_xj .en_photo2_txm {
+    position: absolute;
+    left: 158px;
+    top: 4px;
+}
+
+.logoBot {
+    height: 56px;
+    margin: 40px 20px 10px 0;
+    text-align: right;
+}
+.hide{
+    display: none;
+}
+.modal.fade{
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color: rgba(100,100,100,0.6);
+}
+.btn{
+    width: 100px;
+    height: 28px;
+}

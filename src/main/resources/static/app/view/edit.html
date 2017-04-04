@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>教育部学籍在线验证报告_中国高等教育学生信息网（学信网）</title>
+    <meta name="keywords" content="教育部学籍在线验证报告,学历在线验证报告,教育部学历证书电子注册备案表,学历查询,学历验证,学信网"/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="../js/date-picker-config.js"></script>
+    <script type="text/javascript" src="../js/jquery-validate.js"></script>
+    <link href='../css/common2014.css' rel="stylesheet" type="text/css"/>
+    <link href='../css/index.css' rel="stylesheet" type="text/css"/>
+    <style>
+        input, select {
+            border: 1px solid #999;
+            height: 28px;
+            width: 150px;
+            padding-left: 3px;
+        }
+
+        .ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
+            width: 75px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="main clearfix">
+    <div class="" id="rightCnt" style="margin: 60px auto; ">
+        <div class="m_cnt_l" style="width:1000px;">
+            <form enctype="multipart/form-data" method="post">
+                <div id="resultTable" class="clearfix">
+                    <div class="tableTitle">填写</div>
+                    <div class="div3" style="width:900px;">
+                        <div id="fixedPart">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="53" class="title1" width="53">姓名</td>
+                                    <td colspan="3">
+                                        <input type="text" name="tarName">
+                                    </td>
+                                    <td rowspan="3" width="93">
+                                        <button type="button" data-img="portrait" class="js-upload-img">上传照片
+                                        </button>
+                                        <br>
+                                        <span class="js-portrait-name"></span>
+                                        <input class="hide js-upload" type="file" name="portrait">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title1" width="53">性别</td>
+                                    <td width="126">
+                                        <select name="tarGender">
+                                            <option value="1">男</option>
+                                            <option value="0">女</option>
+                                        </select>
+                                    </td>
+                                    <td width="83" class="title1" width="53">证件号码</td>
+                                    <td width="267">
+                                        <input type="text" name="tarCardID">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title1" width="53">民族</td>
+                                    <td>
+                                        <input type="text" name="tarNations" value="汉族">
+                                    </td>
+                                    <td class="title1" width="53">出生日期</td>
+                                    <td>
+                                        <input class="date-picker" type="text" name="tarBirthday"
+                                               placeholder="">
+                                    </td>
+                                </tr>
+                            </table>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="53" class="title1">
+                                        院校
+                                    </td>
+                                    <td colspan="3">
+                                        <input type="text" name="tarSchool">
+                                    </td>
+                                    <td width="56" class="title1">层次</td>
+                                    <td width="173">
+                                        <input type="text" name="tarCategory" value="本科">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title1">院系</td>
+                                    <td colspan="3">
+                                        <input type="text" name="tarDepartments">
+                                    </td>
+                                    <td class="title1">班级</td>
+                                    <td>
+                                        <input type="text" name="tarClass">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title1">专业</td>
+                                    <td colspan="3">
+                                        <input type="text" name="tarMajor">
+                                    </td>
+                                    <td class="title1">学号</td>
+                                    <td>
+                                        <input type="text" name="tarStudentID">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title1">形式</td>
+                                    <td width="126">
+                                        <input type="text" name="tarForm" value="普通全日制">
+                                    </td>
+                                    <td width="83" class="title1">入学时间</td>
+                                    <td width="130">
+                                        <input class="date-picker" type="text" name="tarEntranceTime"
+                                               placeholder="">
+                                    </td>
+                                    <td class="title1">学制</td>
+                                    <td>
+                                        <input type="text" name="tarEntranceTime" value="4年" placeholder="N年">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title1">类型</td>
+                                    <td>
+                                        <input type="text" name="tarType" value="普通">
+                                    </td>
+                                    <td class="title1">学籍状态</td>
+                                    <td colspan="3">
+                                        <div class="cnt1">
+                                            毕业日期：<input class="date-picker" type="text"
+                                                        name="tarGraduationTime">
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+
+
+                        <div id="erWeiPart">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" style="">
+                                <tr>
+                                    <td width="53" rowspan="3" class="title1">二<br/>
+                                        维<br/>
+                                        验<br/>
+                                        证<br/>
+                                        码
+                                    </td>
+                                    <td width="334" rowspan="3">
+
+                                    </td>
+                                    <td width="104" class="title1">在线验证码</td>
+                                    <td width="132">
+                                        <input type="text" name="tarEntranceTime" placeholder="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title2">报告日期</td>
+                                    <td>
+                                        <input type="text" class="date-picker" name="tarBeginTime"
+                                               placeholder="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title2">验证期至</td>
+                                    <td>
+                                        <input type="text" class="date-picker" name="tarEndTime" placeholder="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="" colspan="4">
+                                        <button type="button" class="btn">
+                                            上传
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade hide">
+</div>
+<script src="../js/edit.js"></script>
+
+</body>
+</html>
