@@ -38,7 +38,7 @@ public class ResumeController extends BaseController {
 
     @RequestMapping("/delete/{id}")
     @ResponseBody
-    public Response<Void> deleteByid(@PathVariable Integer id) throws Exception{
+    public Response<Void> deleteById(@PathVariable Integer id) throws Exception{
         resumeDao.delete(id);
         return Response.ok();
     }
