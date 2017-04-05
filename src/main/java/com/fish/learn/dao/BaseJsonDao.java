@@ -2,6 +2,8 @@ package com.fish.learn.dao;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.fish.learn.cache.CacheHandle;
+import com.fish.learn.cache.CacheOption;
 import com.fish.learn.model.BaseModel;
 import com.fish.learn.model.Resume;
 import lombok.Getter;
@@ -28,7 +30,7 @@ public class BaseJsonDao<T extends BaseModel> {
     private final String simpleNameSpace;
 
     /**
-     * 简称
+     * 命名空间
      */
     @Getter
     private final String nameSpace;
@@ -65,6 +67,7 @@ public class BaseJsonDao<T extends BaseModel> {
         return jsonData;
     }
 
+    //@CacheHandle( CacheOption.SELECT )
     public List<T> getAll() throws Exception{
         return JSONArray.parseArray( this.getSourceAsString() , this.getParameterizedType() );
     }
@@ -84,6 +87,7 @@ public class BaseJsonDao<T extends BaseModel> {
         return id;
     }
 
+    @CacheHandle( CacheOption.UPDATE )
     public void update( T t )throws Exception{
         List<Resume> allData = JSONArray.parseArray( this.getSourceAsString() , Resume.class );
         for( Resume data : allData ){
@@ -94,6 +98,7 @@ public class BaseJsonDao<T extends BaseModel> {
         this.writeSource((List<T>) allData);
     }
 
+    @CacheHandle( CacheOption.DELETE )
     public void delete(int id) throws Exception {
         List<T> allData = this.getAll();
         for( int i = 0 ; i < allData.size() ; ++i ){
@@ -123,6 +128,7 @@ public class BaseJsonDao<T extends BaseModel> {
      * @return
      * @throws Exception
      */
+    @CacheHandle( CacheOption.SELECT )
     public Resume getById(int id) throws Exception{
         List<Resume> allData = JSONArray.parseArray( this.getSourceAsString() , Resume.class );
         for( Resume data : allData ){

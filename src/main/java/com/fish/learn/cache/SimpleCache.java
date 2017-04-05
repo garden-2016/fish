@@ -12,18 +12,39 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component
 public class SimpleCache {
 
-    private Map<String , String> simpleCache = new ConcurrentHashMap();
+    private Map<Integer , Object> simpleCache = new ConcurrentHashMap<Integer , Object>();
 
-    public String get(String key){
+    public Object get(Integer key){
         return simpleCache.get(key);
     }
 
-    public void put(String key , String value){
+    public void put(Integer key , Object value){
         simpleCache.put(key , value);
+    }
+
+    public void remove(Integer key){
+        simpleCache.remove(key);
     }
 
     public void clear(){
         simpleCache.clear();
+    }
+
+    /**
+     * 生成key
+     * @param agrs 参数
+     * @return
+     */
+    public static int generateCacheKey( Object [] agrs){
+        Integer _cacheKey = Integer.MAX_VALUE;
+        if( agrs == null || agrs.length > 0 ){
+            for( int i = 0 ; i < agrs.length ; ++i ){
+                if( agrs[i] != null ){
+                    _cacheKey = _cacheKey & agrs[i].hashCode();
+                }
+            }
+        }
+        return _cacheKey;
     }
 
 }
