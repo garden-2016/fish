@@ -3,7 +3,7 @@
     $( ".date-picker" ).datepicker({
         changeMonth: true,
         changeYear: true,
-        yearRange:'c-30:c+10'
+        yearRange:'c-50:c+1'
     });
     //上传框样式
     $(".js-upload-img").on("click",function () {
@@ -11,6 +11,15 @@
         $('[name='+baseName+']').trigger("click");
     });
     $(".js-upload").on("change",function () {
+        //解决上传路径问题
+        // var node = this;
+        // var imgURL="";
+        // var reader = new FileReader();
+        // reader.onload = function (e) {
+        //     imgURL = e.target.result;
+        //     $(".js-"+this.name+"-name").attr({src:imgURL,alt:imgURL});
+        // };
+        // reader.readAsDataURL(node.files[0]);
         $(".js-"+this.name+"-name").html(this.value);
     });
     //上传
