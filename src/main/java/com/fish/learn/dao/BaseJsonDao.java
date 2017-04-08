@@ -87,7 +87,7 @@ public class BaseJsonDao<T extends BaseModel> {
         return id;
     }
 
-    @CacheHandle( CacheOption.UPDATE )
+    //@CacheHandle( CacheOption.UPDATE )
     public void update( T t )throws Exception{
         List<Resume> allData = JSONArray.parseArray( this.getSourceAsString() , Resume.class );
         for( Resume data : allData ){
@@ -98,7 +98,7 @@ public class BaseJsonDao<T extends BaseModel> {
         this.writeSource((List<T>) allData);
     }
 
-    @CacheHandle( CacheOption.DELETE )
+    //@CacheHandle( CacheOption.DELETE )
     public void delete(int id) throws Exception {
         List<T> allData = this.getAll();
         for( int i = 0 ; i < allData.size() ; ++i ){
@@ -128,7 +128,7 @@ public class BaseJsonDao<T extends BaseModel> {
      * @return
      * @throws Exception
      */
-    @CacheHandle( CacheOption.SELECT )
+    //@CacheHandle( CacheOption.SELECT )
     public Resume getById(int id) throws Exception{
         List<Resume> allData = JSONArray.parseArray( this.getSourceAsString() , Resume.class );
         for( Resume data : allData ){
