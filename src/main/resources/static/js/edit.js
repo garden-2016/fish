@@ -18,7 +18,7 @@
         var formData = new FormData();
         formData.append('file', $('[input='+name+']')[0].files[0]);
         $.ajax({
-            url: '/upload',
+            url: '/resume/get/{#id} ',
             type: 'POST',
             cache: false,
             data: formData,
@@ -51,7 +51,8 @@
             return {success:true, data:dataList};
         }
     }
-    $(".btn").on("click",function () {
+    $(".submit-btn").on("click",function () {
+        upload_img("portrait");
         console.log(getData(dataLines));
     });
-}())
+}());
