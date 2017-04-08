@@ -16,9 +16,9 @@
     //上传
     function upload_img(name) {
         var formData = new FormData();
-        formData.append('file', $('[input='+name+']')[0].files[0]);
+        formData.append('file', $('[name='+name+']')[0].files[0]);
         $.ajax({
-            url: '/resume/get/{#id} ',
+            url: '/resume/upload/0 ',
             type: 'POST',
             cache: false,
             data: formData,
