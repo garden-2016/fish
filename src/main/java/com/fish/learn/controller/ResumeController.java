@@ -3,8 +3,14 @@ package com.fish.learn.controller;
 import com.fish.learn.dao.ResumeDao;
 import com.fish.learn.dto.Response;
 import com.fish.learn.model.Resume;
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.FileOutputStream;
 
 /**
  * @author noName
@@ -42,5 +48,21 @@ public class ResumeController extends BaseController {
         resumeDao.delete(id);
         return Response.ok();
     }
+
+    @PostMapping("/upload/{id}")
+    @ResponseBody
+    public Response<String> fileUpload(@PathVariable("id") String id ,@RequestParam("file") MultipartFile file) throws Exception{
+        String path = StringUtils.join( ROOT_IMG_PATH , File.separator , id );
+        File fPath = new File(path);
+        fPath.mkdirs();
+        String fileUrl = StringUtils.join( DO_MAIN , File.separator , IMG_PATH , File.separator , id , File.separator , file.getOriginalFilename() );
+        FileOutputStream ops = new FileOutputStream( StringUtils.join( path , File.separator , file.getOriginalFilename() ) );
+        IOUtils.copy( file.getInputStream() , ops );
+        ops.flush();
+        ops.close();
+        file.getInputStream().close();
+        return Response.ok(fileUrl);
+    }
+
 
 }
