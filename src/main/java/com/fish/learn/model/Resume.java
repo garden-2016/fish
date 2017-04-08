@@ -85,4 +85,29 @@ public class Resume extends BaseModel{
      */
     private String verifyImg;
 
+    /**
+     * 民族
+     */
+    private String nations;
+
+    /**
+     * 班级
+     */
+    private String classNo;
+
+    /**
+     * 学号
+     */
+    private String studentId;
+
+    /**
+     * 学制
+     */
+    private String entrance;
+
+    /**
+     * 毕业日期
+     */
+    private String graduationTime;
+
 }
