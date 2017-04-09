@@ -15,7 +15,7 @@ function load() {
         });
         $(".total").html(total);
         if(pageNoLen>0){
-            for(var j=1;j<=pageNoLen;i++){
+            for(var j=1;j<=pageNoLen;j++){
                 pageNoOption+="<option value='"+j+"'>"+j+"</option>";
             }
             $("#pageNo").html(pageNoOption);
