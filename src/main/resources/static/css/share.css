@@ -1,0 +1,20 @@
+/**
+*author:wly;
+*date:2016/2/2
+*/
+@charset "utf-8";
+.sharepanel{width:26px; height:340px; position:fixed;_position:absolute; right:0; top:60px; line-height:21px; font-size:12px; text-align:left; float:right; overflow:hidden;}
+.sharepanel .share_imgl{ position:absolute; left:0; top:30px;}
+.sharepanel .share_text{border:1px solid #E9E9E9; width:114px;display:block;background:#F6F6F6; padding:4px 6px;font-weight:bold; position:absolute; left:26px; top:0;}
+.sharepanel ul{border:1px solid #E9E9E9; width:114px; background:#FFFFFF;padding:8px 6px; margin:0 auto; list-style:none; position:absolute; left:26px; top:30px;}
+.sharepanel ul li{ height:31px; margin:2px; padding:0;}
+.sharepanel a {border:1px solid #FFFFFF;text-decoration: none;display:block;width:97%;cursor: pointer;color: #565656;padding:2px 0;text-indent:2.4em;background:url(../images/share.png?201605)  no-repeat;}
+.sharepanel a:hover{ background-color:#F3F3F3; border:1px solid #EEEEEE; border-radius:3px;}
+.sharepanel .sinawb{background-position:0 4px;}
+.sharepanel .qqkj{background-position:0 -36px;}
+.sharepanel .qqwb{background-position:0 -76px;}
+.sharepanel .qqwx{background-position:0 -116px;}
+.sharepanel .wx_part{overflow:hidden;zoom:100%;}
+.sharepanel .qrcode{display:block;padding:10px 7px 5px;width:100px;height:100px;overflow:hidden;}
+.sharepanel .qrcode img{width:100px;height:100px;}
+.sharepanel .wx_text{display:block;width:114px;text-align:center;font-size:12px;line-height:21px;color:#666;}

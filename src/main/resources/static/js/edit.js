@@ -1,4 +1,4 @@
-(function () {
+function loadEndToDo () {
     //时间控件
     $( ".date-picker" ).datepicker({
         changeMonth: true,
@@ -20,28 +20,32 @@
         //     $(".js-"+this.name+"-name").attr({src:imgURL,alt:imgURL});
         // };
         // reader.readAsDataURL(node.files[0]);
-        $(".js-"+this.name+"-name").html(this.value);
+        if(this.name){
+            upload_img(this.name);
+        }
     });
     //上传
     function upload_img(name) {
         var formData = new FormData();
         formData.append('file', $('[name='+name+']')[0].files[0]);
         $.ajax({
-            url: '/resume/upload/0 ',
+            url: '/resume/upload',
             type: 'POST',
             cache: false,
             data: formData,
             processData: false,
             contentType: false
         }).done(function(res) {
-
-        }).fail(function(res) {
-
-        });
+            if(res){
+                $(".js-"+this.name+"-name").attr("src",res);
+            }else{
+                alert("呵呵,图片上传失败")
+            }
+        })
     }
 
     //获取表单数据
-    var dataLines=$("#resultTable").find("input,select");
+    var dataLines=$("#resultTable").find(".js-submit-info");
     function getData(data) {
         var index=0;
         var errorList=[];
@@ -57,11 +61,33 @@
         if(index!=data.length){
             return {success:false, data:errorList};
         }else{
+            if($("[name=data-id]").val()){
+                dataList["id"]=$("[name=data-id]").val();
+            }
             return {success:true, data:dataList};
         }
     }
+    //提交操作
     $(".submit-btn").on("click",function () {
-        upload_img("portrait");
-        console.log(getData(dataLines));
+        var submitData=getData(dataLines);
+        var url='/resume/add';
+        if(submitData.success){
+            if(submitData.data.id){
+                url="/resume/update"
+            }
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: submitData.data
+            }).done(function(res) {
+                alert("提交成功");
+            }).fail(function(res) {
+                alert("提交失败");
+            });
+        }else{
+            alert("请检查表单是否完整");
+        }
+        console.log(submitData);
     });
-}());
+}
+loadEndToDo();

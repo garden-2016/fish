@@ -32,8 +32,7 @@
 <div class="main clearfix">
     <div class="" id="rightCnt" style="margin: 60px auto; ">
         <div class="m_cnt_l" style="width:1000px;">
-            <form enctype="multipart/form-data" method="post">
-                <div id="resultTable" class="clearfix">
+           <div id="resultTable" class="clearfix">
                     <div class="tableTitle">填写</div>
                     <div class="div3" style="width:900px;">
                         <div id="fixedPart">
@@ -41,43 +40,46 @@
                                 <tr>
                                     <td width="53" class="title1" width="53">姓名</td>
                                     <td colspan="3">
-                                        <span class="js-nameImg-name"></span>
+                                        <img src="" alt="" class="js-nameImg-name" width="478" height="43">
+                                        <br>
                                         <button type="button" data-img="nameImg" class="js-upload-img">上传姓名照片
                                         </button>
-                                        <input class="hide js-upload" type="file" name="nameImg">
+                                        <input class="js-submit-info" name="name" placeholder="姓名">
+                                        <input class="hide js-upload js-submit-info" type="file" name="nameImg">
                                         <!--隐藏id 编辑用-->
-                                        <input type="hidden" name="data-id">
+                                        <input type="hidden" name="data-id" class="">
                                     </td>
                                     <td rowspan="3" width="93">
-                                        <span class="js-portrait-name"></span>
+                                        <img src="" alt="" class="js-portrait-name" width="84.0" height="112.0">
                                         <button type="button" data-img="portrait" class="js-upload-img">上传头像
                                         </button>
-                                        <input class="hide js-upload" type="file" name="portrait">
+                                        <input class="hide js-upload js-submit-info" type="file" name="portrait">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="title1" width="53">性别</td>
                                     <td width="126">
-                                        <select name="gender">
+                                        <select name="gender" class="js-submit-info">
                                             <option value="男">男</option>
                                             <option value="女">女</option>
                                         </select>
                                     </td>
-                                    <td width="83" class="title1" width="53">证件号码</td>
+                                    <td width="83" class="title1" width="53">证书编号</td>
                                     <td width="267">
-                                        <input type="text" name="cardNo">
+                                        <input type="text" name="cardNo" class="js-submit-info">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="title1" width="53">民族</td>
-                                    <td>
-                                        <input type="text" name="nations" value="汉族">
-                                    </td>
                                     <td class="title1" width="53">出生日期</td>
                                     <td>
-                                        <input class="date-picker" type="text" name="birthday"
+                                        <input class="date-picker js-submit-info" type="text" name="birthday"
                                                placeholder="">
                                     </td>
+                                    <td class="title1">形式</td>
+                                    <td width="126">
+                                        <input type="text" name="learnType" value="普通全日制" class="js-submit-info">
+                                    </td>
+
                                 </tr>
                             </table>
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -86,59 +88,40 @@
                                         院校
                                     </td>
                                     <td colspan="3">
-                                        <input type="text" name="school">
+                                        <input type="text" name="school" class="js-submit-info">
                                     </td>
                                     <td width="56" class="title1">层次</td>
                                     <td width="173">
-                                        <input type="text" name="educationLevel" value="本科">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="title1">院系</td>
-                                    <td colspan="3">
-                                        <input type="text" name="tarDepartments">
-                                    </td>
-                                    <td class="title1">班级</td>
-                                    <td>
-                                        <input type="text" name="tarClass">
+                                        <input type="text" name="educationLevel" value="本科" class="js-submit-info">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="title1">专业</td>
                                     <td colspan="3">
-                                        <input type="text" name="major">
-                                    </td>
-                                    <td class="title1">学号</td>
-                                    <td>
-                                        <input type="text" name="studentId">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="title1">形式</td>
-                                    <td width="126">
-                                        <input type="text" name="learnType" value="普通全日制">
+                                        <input type="text" name="major" class="js-submit-info">
                                     </td>
                                     <td width="83" class="title1">入学时间</td>
                                     <td width="130">
-                                        <input class="date-picker" type="text" name="joinTime"
+                                        <input class="date-picker js-submit-info" type="text" name="joinTime"
                                                placeholder="">
                                     </td>
-                                    <td class="title1">学制</td>
-                                    <td>
-                                        <input type="text" name="entrance" value="4年" placeholder="N年">
-                                    </td>
+                                </tr>
+                                <tr>
+
                                 </tr>
                                 <tr>
                                     <td class="title1">类型</td>
                                     <td>
-                                        <input type="text" name="educationType" value="普通">
+                                        <input type="text" name="educationType" value="普通" class="js-submit-info">
                                     </td>
-                                    <td class="title1">学籍状态</td>
-                                    <td colspan="3">
-                                        <div class="cnt1">
-                                            毕业日期：<input class="date-picker" type="text"
+                                    <td class="title1">毕业日期</td>
+                                    <td>
+                                        <input class="date-picker js-submit-info" type="text"
                                                         name="graduationTime">
-                                        </div>
+                                    </td>
+                                    <td class="title1">院校所在地</td>
+                                    <td>
+                                        <input class="js-submit-info" type="text" name="schoolAddr">
                                     </td>
                                 </tr>
 
@@ -165,14 +148,14 @@
                                 <tr>
                                     <td class="title2">报告日期</td>
                                     <td>
-                                        <input type="text" class="date-picker" name="createTime"
+                                        <input type="text" class="date-picker js-submit-info" name="createTime"
                                                placeholder="">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="title2">验证期至</td>
                                     <td>
-                                        <input type="text" class="date-picker" name="verifyTime" placeholder="">
+                                        <input type="text" class="date-picker js-submit-info" name="verifyTime" placeholder="">
                                     </td>
                                 </tr>
                                 <tr>
@@ -186,7 +169,6 @@
                         </div>
                     </div>
                 </div>
-            </form>
         </div>
     </div>
 </div>

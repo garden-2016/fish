@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>教育部学历证书电子注册备案表_中国高等教育学生信息网（学信网）</title>
+    <meta name="keywords" content="学历在线验证报告,教育部学历证书电子注册备案表,教育部学籍在线验证报告,学历查询,学历验证,学信网"/>
+    <meta name="description" content=""/>
+    <link href='../css/common2014.css' rel="stylesheet" type="text/css"/>
+    <link href="../css/share.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="../js/snsshare.js" type="text/javascript"></script>
+    <style type="text/css">
+        .sr_tab_title {
+            width: 200px;
+            height: 29px;
+            position: absolute;
+            left: -1px;
+            top: -29px;
+            border-right: 1px solid #F90;
+        }
+
+        .sr_tab_title li {
+            width: 99px;
+            height: 27px;
+            line-height: 27px;
+            border: 1px solid #F90;
+            border-right: none;
+            float: left;
+            display: inline;
+            text-align: center;
+            background: #FFFFFF;
+            cursor: pointer;
+        }
+
+        .sr_tab_title li.onread {
+            font-weight: bold;
+            background: #FFF9DF;
+            border-bottom: 1px solid #FFF9DF;
+        }
+
+        .sr_tab_cnt {
+            border: 1px dotted #F90;
+            line-height: 25px;
+            padding: 8px 12px;
+            background: #FFF9DF;
+            margin-top: 32px;
+            position: relative;
+            text-align: left;
+        }
+
+        .sr_tab_cnt h3 {
+            font-size: 16px;
+            font-family: '微软雅黑';
+            text-align: center;
+            line-height: 32px;
+            border-bottom: 1px solid #F5D6A7;
+            margin-bottom: 6px;
+        }
+
+        .sr_title {
+            font-weight: bold;
+        }
+
+        .sr_cnt {
+            padding-left: 24px;
+        }
+
+        .sr_zhizhi {
+            font-weight: bold;
+            color: #066;
+        }
+
+        .tableTitle {
+            clear: both;
+            font-size: 24px;
+            font-weight: normal;
+            text-align: center;
+            line-height: 40px;
+            padding: 10px 0;
+            color: #2EAFBB;
+        }
+
+        .yzmBg {
+            height: 128px;
+            *height: 131px;
+            width: 300px;
+        }
+
+        .div1 {
+            padding-bottom: 20px;
+        }
+
+        .div2 {
+            width: 628px;
+            padding: 1px;
+            margin: 0 auto;
+        }
+
+        /*for en*/
+        .tableTitle_en {
+            clear: both;
+            text-align: center;
+            padding: 10px 0;
+            color: #2EAFBB;
+            font: normal 20px/40px Tahoma, arial, sans-serif;
+        }
+
+        .en_table {
+            border-top: 1px solid #AACED8;
+            border-left: 1px solid #AACED8;
+            margin: 0 auto;
+        }
+
+        .en_table_noborder {
+            border-top: none;
+        }
+
+        .en_table span {
+            padding-left: 5px;
+            display: block;
+        }
+
+        .en_table th {
+            font: bold 12px/1.5 Tahoma, arial, sans-serif;
+            text-align: left;
+            color: #333333;
+            border-bottom: 1px solid #AACED8;
+            border-right: 1px solid #AACED8;
+            height: 43px;
+        }
+
+        .en_table td {
+            font: normal 12px/1.5 Tahoma, arial, sans-serif;
+            text-align: left;
+            color: #333333;
+            border-bottom: 1px solid #AACED8;
+            border-right: 1px solid #AACED8;
+            height: 43px;
+        }
+
+        .en_table h2 {
+            font: bold 14px/40px Tahoma, arial, sans-serif;
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .en_table ol {
+            list-style: decimal;
+            padding: 0 20px 0 40px;
+            line-height: 21px;
+        }
+
+        .en_table ol li {
+            list-style: decimal !important;
+        }
+
+        .en_photo1 {
+            width: 132px;
+            height: 175px;
+            position: relative;
+        }
+
+        .en_photo1 .en_photo1_img {
+            position: absolute;
+            left: 6px;
+            top: 7px;
+        }
+
+        .en_photo2 {
+            width: 301px;
+            height: 131px;
+            position: relative;
+        }
+
+        .en_photo2 .en_photo2_bg {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+        .en_photo2 .en_photo2_2wm {
+            position: absolute;
+            left: 5px;
+            top: 4px;
+        }
+
+        .en_photo2 .en_photo2_txm {
+            position: absolute;
+            left: 135px;
+            top: 4px;
+        }
+
+        /*for cn*/
+        .cn_table {
+            border-top: 1px solid #AACED8;
+            border-left: 1px solid #AACED8;
+            margin: 0 auto;
+        }
+
+        .cn_table_noborder {
+            border-top: none;
+        }
+
+        .cn_table span {
+            padding-left: 5px;
+            display: block;
+        }
+
+        .cn_table th {
+            font-family: "黑体";
+            font-size: 16px;
+            font-weight: normal;
+            text-align: center;
+            color: #333333;
+            border-bottom: 1px solid #AACED8;
+            border-right: 1px solid #AACED8;
+            height: 43px;
+        }
+
+        .cn_table td {
+            font-family: "楷体_GB2312", "宋体";
+            font-size: 16px;
+            text-align: left;
+            color: #333333;
+            border-bottom: 1px solid #AACED8;
+            border-right: 1px solid #AACED8;
+            height: 43px;
+        }
+
+        th.cn_font1 {
+            letter-spacing: 5px;
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        td.cn_font2 {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: bold;
+        }
+
+        .cn_table h2 {
+            line-height: 36px;
+            font-size: 16px;
+            font-family: "黑体";
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .cn_table ol {
+            list-style: decimal;
+            padding: 0 20px 0 40px;
+            line-height: 25px;
+            font-size: 14px;
+            font-family: "宋体";
+        }
+
+        .cn_photo1 {
+            width: 132px;
+            height: 175px;
+            position: relative;
+        }
+
+        .cn_photo1 .cn_photo1_img {
+            position: absolute;
+            left: 6px;
+            top: 7px;
+        }
+
+        .cn_photo2 {
+            width: 301px;
+            height: 131px;
+            position: relative;
+        }
+
+        .cn_photo2 .cn_photo2_bg {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+        .cn_photo2 .cn_photo2_2wm {
+            position: absolute;
+            left: 5px;
+            top: 4px;
+        }
+
+        .cn_photo2 .cn_photo2_txm {
+            position: absolute;
+            left: 135px;
+            top: 4px;
+        }
+
+        .zysx {
+            width: 560px;
+            margin: 0 auto;
+        }
+
+        .zysx table td {
+            border: 0 !important;
+            padding: 0 !important;
+            height: auto !important;
+            font-family: "宋体" !important;
+            font-size: 14px !important;
+            text-align: left !important;
+            line-height: 25px !important;
+        }
+
+        .logoBot {
+            margin-right: 20px;
+            height: 68px;
+            text-align: right;
+        }
+    </style>
+
+
+    <script src="../js/boomerang-min-20141211.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        BOOMR.init({
+            beacon_url: "http://www.chsi.com.cn/images/perf.gif",
+            log: null,
+            DNS: {
+                base_url: "http://*.chdi.com.cn/images/"
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-100524-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+
+<body>
+
+<h1>教育部学历证书电子注册备案表</h1>
+
+
+<img src='../images/share_xxw.jpg' width='0' height='0' style='position: absolute;top:-100px;left: 0'/>
+<div class="t_top_nav">
+    <div class="width1000 clearfix">
+        <div class="t_top_nav_l">&nbsp;</div>
+        <div class="t_top_nav_r"><a href="/" target="_parent">首页</a>　|　<a href="/help/wzdh.jsp"
+                                                                          target="_parent">网站导航</a>　|　<a
+                href="http://www.chsi.cn/" target="_parent">教育网</a>　|　<a href="/en/" target="_parent">English</a></div>
+        <div class="clearit"></div>
+    </div>
+</div>
+<div class="t_header">
+    <div class="width1000 clearfix">
+        <div class="t_h_logo"><a href="/" target="_parent" class="home"></a>&nbsp;</div>
+        <h2><a href="/" target="_parent" class="home"></a>教育部指定的学历查询唯一网站、教育部高校招生阳光工程指定网站、全国硕士研究生招生报名和调剂指定网站</h2>
+        <div class="t_h_search">
+            <form method="get" action="/result.jsp" target="_blank" id='cse-search-box'>
+                <table cellpadding="0" cellspacing="0" border="0" align="right">
+                    <tr>
+                        <td>
+                            <input type="text" name="q" maxlength="50" id="sbi" class="t_h_s_input color999"
+                                   value="站内搜索"/>
+                            <input type="hidden" name="sitesearch" value="chsi.com.cn"/>
+                            <input type="hidden" name="searchType" value="baidu"/>
+                        </td>
+                        <td>
+                            <input type="submit" id="sbb" value="搜索" class="t_h_s_submit"/>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+    .t_nav li {
+        padding-right: 7px;
+    }
+</style>
+<div class="t_nav">
+    <ul class="width1000">
+        <li style="padding-left:5px;"><a href="/" target="_parent">首页</a></li>
+        <li><a href="http://my.chsi.com.cn/" target="_blank">学籍查询</a></li>
+        <li><a href="http://www.chsi.com.cn/xlcx/index.jsp" target="_parent">学历查询</a></li>
+        <li><a href="http://www.chsi.com.cn/xlcx/bgcx.jsp">在线验证</a></li>
+        <li><a href="http://www.chsi.com.cn/xlrz/index.jsp" target="_parent">学历与成绩认证</a></li>
+        <li><a href="https://my.chsi.com.cn/archive/index.jsp#txjd" target="_blank">图像校对</a></li>
+        <li><a href="http://my.chsi.com.cn/" target="_blank">学信档案</a></li>
+        <li><a href="http://gaokao.chsi.com.cn/" target="_blank" title="教育部阳光高考信息平台">高考</a></li>
+        <li><a href="http://yz.chsi.com.cn/" target="_blank" title="中国研究生招生信息网">考研</a></li>
+        <li><a href="http://zf.chsi.com.cn/" target="_blank" title="政法干警改革试点招生网">政法招生</a></li>
+        <li><a href="http://www.gatzs.com.cn/" target="_blank">港澳台招生</a></li>
+        <li><a href="http://www.chsi.com.cn/cet/" target="_parent">四六级查分</a></li>
+        <li><a href="http://www.gfbzb.gov.cn/" target="_blank">征兵</a></li>
+        <li><a href="http://job.chsi.com.cn/" target="_blank">就业</a></li>
+        <li><a href="http://xz.chsi.com.cn/" target="_blank">学职平台</a></li>
+        <li><a href="http://jp.chsi.com.cn/" target="_blank">日本频道</a></li>
+        <li style="padding-right:0;"><a href="http://www.ncss.org.cn" title='新职业' target='_blank'
+                                        onmousedown="goo(this, '1654381345')"
+                                        onblur="this.href='http://www.ncss.org.cn'">新职业</a></li>
+    </ul>
+</div>
+<script type="text/javascript">
+    function formSubmitH() {
+        var sbi = document.getElementById('sbi').value;
+        sbi = sbi.replace(/^\s+|\s+$/g, '');//去左右空格
+        document.getElementById('sbi').value = sbi;//去空格后赋值
+        if (sbi == '' || sbi == '站内搜索') {
+            alert('请输入搜索内容！');
+            return false;
+        }
+        if (sbi.length > 50) {
+            alert('关键字不得超过50个字');
+            return false;
+        }
+        return true;
+    }
+    document.getElementById("cse-search-box").onsubmit = function () {
+        return formSubmitH();
+    }
+    //输入框获取焦点和失去焦点效果
+    function eventFocusAndBlur(id, text) {
+        document.getElementById(id).onfocus = function () {
+            if (this.value == "" || this.value == text) {
+                this.value = "";
+            }
+            this.style.color = "#333333";
+        }
+        document.getElementById(id).onblur = function () {
+            if (this.value == "" || this.value == text) {
+                this.value = text;
+                this.style.color = "#999999";
+            }
+        }
+    }
+    eventFocusAndBlur("sbi", "站内搜索");
+    function goo(curr, adv_id) {
+        curr.href = "http://axvert.chsi.com.cn/goo.action?aid=" + adv_id + "&evtype=referer_blank";
+        return true;
+    }
+</script>
+<div class="main clearfix">
+    <div class="m_yah"><a href="/">首页</a> &gt; <a href="http://www.chsi.com.cn/xlcx/bgcx.jsp">学籍/学历在线验证报告</a> &gt; 教育部学历证书电子注册备案表</div>
+    <div class="m_s_l" id="leftMenu">
+        <ul class="m_s_l_ul">
+            <li class="onread"><span class="icon_list">&nbsp;</span><a
+                    href="http://www.chsi.com.cn/xlcx/bgcx.jsp">在线验证</a></li>
+            <li><span class="icon_list">&nbsp;</span><a href="http://www.chsi.com.cn/xlcx/bgys.jsp">验证报告简介</a></li>
+            <li><span class="icon_list">&nbsp;</span><a href="http://www.chsi.com.cn/xlcx/fwcs.jsp">防伪措施</a></li>
+            <li><span class="icon_list">&nbsp;</span><a href="http://www.chsi.com.cn/xlcx/yzzw.jsp">验证真伪</a></li>
+            <li><span class="icon_list">&nbsp;</span><a href="http://www.chsi.com.cn/xlcx/xxewm.jsp">学信二维码</a></li>
+            <li><span class="icon_list">&nbsp;</span><a href="http://www.chsi.com.cn/xlcx/tdhyt.jsp">特点和用途</a></li>
+            <li><span class="icon_list">&nbsp;</span><a href="http://www.chsi.com.cn/xlcx/rhsq.jsp">如何申请</a></li>
+            <li><span class="icon_list">&nbsp;</span><a href="http://www.chsi.com.cn/xlcx/rhsy.jsp">如何使用</a></li>
+            <li><span class="icon_list">&nbsp;</span><a href="http://www.chsi.com.cn/xlcx/rhyq.jsp">如何延期</a></li>
+            <li><span class="icon_list">&nbsp;</span><a href="http://www.chsi.com.cn/xlcx/tbsm.jsp">特别声明</a></li>
+        </ul>
+        <div style="text-align:center;">
+            <a href="http://www.chsi.com.cn/zhaopin/index.jsp" target="_blank"><img
+                    src='http://t4.chei.com.cn/chsi/images/2014/zhaopin.jpg' width="180" height="120"/></a>
+        </div>
+    </div>
+    <div class="m_s_r" id="rightCnt">
+        <div class="m_cnt_l">
+            <div class="chooseLan">
+                请选择报告语种：
+                <a href="" class="current">中文</a> <a href="#" id="openerHref">英文</a>
+                <div id="noenreport" title="申请英文版">
+                    <span class="noenreportArrow"></span>
+                    <a href="#" class="newLayerClose" title="关闭"></a>
+                    <strong>该备案表尚无对应的英文版，如需申请，请按照如下步骤操作：</strong><br/>1、登录学信档案；<br/>2、进入在线验证栏目；<br/>3、点击该备案表后的“申请英文版”链接；<br/>4、根据提示缴费和核对信息后，待系统审核；<br/>5、审核通过后，即可查看英文版。&nbsp;&nbsp;<a
+                        href="http://www.chsi.com.cn/xlcx/rhsq.jsp#rhsqxl_en" target="_blank" style="color:#06C;">查看详情
+                    >></a>
+                </div>
+            </div>
+            <div class="printBG clearfix">
+                <a class="iconClick iconPrint" id="bindGA_print" href="#" title="打印">&nbsp;</a>
+                <a class="iconClick iconDownload" id="bindGA_download" href="javascript:;" title="下载">&nbsp;</a>
+                <a class="iconClick iconEmail" id="showEmail" href="javascript:;" title="发送">&nbsp;</a>
+                <a class="iconClick iconXxewm" id="openxxewm" href="#" title="学信二维码">&nbsp;</a>
+
+                <div class="newLayer" id="emailBox">
+                    <span class="newLayerArrow" style="right:45px;"></span>
+                    <a href="#" class="newLayerClose" title="关闭"></a>
+                    <table border="0" cellpadding="0" cellspacing="6">
+                        <tr>
+                            <td align="left" colspan="2">发送报告到指定邮箱：</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="toEmail" class="input_text input_t_l" id="toEmail" value=""/>
+                            </td>
+                            <td><input type="button" value="发送" class="btn_blue" id="emailButton"/></td>
+                        </tr>
+                        <tr>
+                            <td align="left" colspan="2"><span id="emailMsg">&nbsp;</span></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="newLayer" id="xxewm" title="学信二维码">
+                    <span class="newLayerArrow" style="right:5px;"></span>
+                    <a href="#" class="newLayerClose" title="关闭"></a>
+                    <div class="alignC"><img src="" alt="学信二维码"/><br/>
+                        <a target="_blank" class="bindGA colorBlue" href="javascript:;">下载</a>&nbsp;&nbsp;<a
+                                href="http://www.chsi.com.cn/xlcx/xxewm.jsp" target="_blank"
+                                class="openSample colorBlue">用途</a></div>
+                </div>
+            </div>
+            <div class="clearit"></div>
+            <div id="resultTable">
+                <div class="tableTitle">教育部学历证书电子注册备案表</div>
+                <div class="div1">
+                    <div class="div2">
+                        <table width="628" border="0" align="center" cellpadding="0" cellspacing="0" class="cn_table">
+                            <col width="91">
+                            <col width="172">
+                            <col width="91">
+                            <col width="140">
+                            <col width="133">
+                            <tr>
+                                <th>姓　　名</th>
+                                <td colspan="3">
+                                    <!--姓名-->
+                                    <img src="../images/namebg.jpg" alt="" width="402" height="43">
+                                </td>
+                                <td rowspan="4">
+                                    <div class="cn_photo1" id="xueli_photo_div">
+                                    <img src="../images/photo_cn.jpg" width="132" height="175"/>
+                                        <!--头像-->
+                                    <img class="cn_photo1_img" id="xueliPhoto" src="" width="120.0" height="160.0"/></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <div style="width:90px;">性　　别</div>
+                                </th>
+                                <td>
+                                    <span id="xb" style="width:166px;">男</span>
+                                </td>
+                                <th>
+                                    <div style="width:90px;">出生日期</div>
+                                </th>
+                                <td>
+                                    <span style="width:134px;">1986年7月27日</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>入学时间</th>
+                                <td>
+                                    <span>2010年3月1日</span>
+                                </td>
+                                <th>毕业时间</th>
+                                <td>
+                                    <span>2012年7月1日</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>学历类型</th>
+                                <td>
+                                    <span>网络教育</span>
+                                </td>
+                                <th>学历层次</th>
+                                <td>
+                                    <span>专科</span>
+                                </td>
+                            </tr>
+                            <tr>
+                        </table>
+                        <table width="628" border="0" align="center" cellpadding="0" cellspacing="0"
+                               class="cn_table cn_table_noborder">
+                            <col width="91">
+                            <col width="302">
+                            <col width="101">
+                            <col width="133">
+                            <tr>
+                                <th>
+                                    <div style="width:90px;">毕业院校</div>
+                                </th>
+                                <td>
+                                    <span style="width:296px;">中国地质大学(武汉)</span>
+                                </td>
+                                <th>
+                                    <div style="width:100px;">院校所在地</div>
+                                </th>
+                                <td>
+                                    <span style="width:128">湖北省</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>专业名称</th>
+                                <td>
+                                    <span>建筑工程技术</span></td>
+                                <th class="cn_font1">学习形式</th>
+                                <td>
+                                    <span>网络教育</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>证书编号</th>
+                                <td class="cn_font2">
+                                    <span>1049 1720 1206 7521 16</span>
+                                </td>
+                                <th>毕结业结论</th>
+                                <td>
+                                    <img src="../images/gr.jpg" width="132" height="42"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th rowspan="3">二<br/>维<br/>验<br/>证<br/>码</th>
+                                <td rowspan="3">
+                                    <div class="cn_photo2">
+                                        <img class="cn_photo2_bg" src="../images/barcode_cn.jpg"/>
+                                        <img class="cn_photo2_2wm" src="" width="123" height="123"/>
+                                        <img class="cn_photo2_txm" src="../images/erwm.jpg" width="159" height="123"/>
+                                    </div>
+                                </td>
+                                <th>在线验证码</th>
+                                <td class="cn_font2">
+                                    <span>2894 7710 8883</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="cn_font1">制表日期</th>
+                                <td>
+                                    <span>2017年3月31日</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="cn_font1">验证期至</th>
+                                <td>
+                                    <span>2017年9月26日</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <h2>注意事项：</h2>
+                                    <div class="zysx">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td valign="top">1、</td>
+                                                <td valign="top">备案表是依据《高等学校学生学籍学历电子注册办法》（<a
+                                                        href="http://www.chsi.com.cn/jyzx/201408/20140829/1245955796.html"
+                                                        target="_blank"
+                                                        style="text-decoration:underline;">教学[2014]11号</a>）对学历证书电子注册复核备案的结果；由教育部指定的唯一学历查询网站中国高等教育学生信息网（<a
+                                                        href="http://www.chsi.com.cn" target="_blank">http://www.chsi.com.cn</a>）提供在线验证服务。
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">2、</td>
+                                                <td valign="top">
+                                                    备案表内容验证办法：①点击备案表(电子版)中的在线验证码，可在线验证；②登录中国高等教育学生信息网“在线验证系统”，输入在线验证码进行验证；③利用专业扫描工具或具有条码识别功能的手机，扫描备案表中的二维码进行验证。
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">3、</td>
+                                                <td valign="top">备案表在验证有效期内可免费打印和验证。</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">4、</td>
+                                                <td valign="top">备案表内容如有修改，请以最新在线验证的内容为准。</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">5、</td>
+                                                <td valign="top">备案表内容标注“＊”号，表示学历信息该项内容不详。</td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top">6、</td>
+                                                <td valign="top">未经学历信息权属人同意，不得将备案表用于违背权属人意愿之用途。</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="logoBot"><img src='http://t2.chei.com.cn/chsi/images/logoBG.gif'
+                                                              width="79" height="58" align="right"/></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--<script type="text/javascript" encoding="utf-8" src='http://t1.chei.com.cn/chsi/js/report/print_en.js'></script>-->
+            <!--<script type="text/javascript" encoding="utf-8" src='http://t2.chei.com.cn/chsi/js/report/send_email_cn.js'></script>-->
+
+            <script type="text/javascript" src='../js/util.js'></script>
+            <script src="http://t1.chei.com.cn/common/js/snsshare.js?20160531" type="text/javascript"></script>
+            <div id="share"></div>
+            <script type="text/javascript">
+                var s = new SnsShare("share");
+                s.show();
+                $("#showEmail").click(function () {
+                    $("#emailBox").toggle();
+                    $("#xxewm").hide();
+                    $("#noenreport").hide();
+                    return false;
+                });
+                $("#openxxewm").click(function () {
+                    $("#xxewm").toggle();
+                    $("#emailBox").hide();
+                    $("#noenreport").hide();
+                    return false;
+                });
+                $(".newLayerClose").click(function () {
+                    $(this).parent("div").hide();
+                    return false;
+                });
+
+                $("#showEmailEn").click(function () {
+                    $("#emailBoxEn").toggle();
+                    $("#xxewmEn").hide();
+                    return false;
+                });
+                //                $("#openxxewmEn").click(function(){
+                //                    $("#xxewmEn").toggle();
+                //                    $("#emailBoxEn").hide();
+                //                    return false;
+                //                });
+                $(".newLayerClose").click(function () {
+                    $(this).parent(".newLayer").hide();
+                    return false;
+                });
+
+
+                // ga事件参数设置，参考：http://jira.chsi.com.cn/wiki/pages/viewpage.action?pageId=8651194
+                //                    $( ".openSample" ).live("click",function() {
+                //                        _gaq.push(['_trackEvent','onlinereport','barcode_usecaseclick','cn',1,false]);
+                //                    });
+                //
+                //                    $(".bindGA").click(function(){
+                //                        _gaq.push(['_trackEvent','onlinereport','download_barcode','cn',1,false]);
+                //                    });
+                //                    $(".bindGA_en").click(function(){
+                //                        _gaq.push(['_trackEvent','onlinereport','download_barcode','en',1,false]);
+                //                    });
+                //
+                //                    $("#bindGA_print").click(function(){
+                //                        doPrint();
+                //                        _gaq.push(['_trackEvent','onlinereport','print','cn',1,false]);
+                //                    });
+                //                    $("#bindGA_print_en").click(function(){
+                //                        doPrint();
+                //                        _gaq.push(['_trackEvent','onlinereport','print','en',1,false]);
+                //                    });
+                //
+                $("#bindGA_download").click(function () {
+                    _gaq.push(['_trackEvent', 'onlinereport', 'download_pdf', 'cn', 1, false]);
+                });
+                $("#bindGA_download_en").click(function () {
+                    _gaq.push(['_trackEvent', 'onlinereport', 'download_pdf', 'en', 1, false]);
+                });
+                //
+                //                    $("#emailButton").click(function(){
+                //                        sendEmail("/report/xueli/email.do?vcode=289477108883&amp;rid=68310189558250611344571103439405&amp;ln=cn")
+                //                        _gaq.push(['_trackEvent','onlinereport','email','cn',1,false]);
+                //                    });
+                //                    $("#emailButton_en").click(function(){
+                //                        sendEmail("/report/xueli/email.do?vcode=289477108883&amp;rid=68310189558250611344571103439405&amp;ln=cn")
+                //                        _gaq.push(['_trackEvent','onlinereport','email','en',1,false]);
+                //                    });
+                //
+                //
+                $(".sr_tab_title > li").live("click", function () {
+                    index = $(this).parent().children("li").index(this);
+                    $(this).addClass("onread").siblings("li").removeClass("onread");
+                    $(".sr_tab_cnt_toggle").children("div").eq(index).show().siblings("div").hide();
+                });
+
+                //照片水平垂直都居中
+                var imgLeft = ($("#xueli_photo_div").width() - $("#xueliPhoto").attr("width")) / 2;
+                var imgTop = ($("#xueli_photo_div").height() - $("#xueliPhoto").attr("height")) / 2;
+                $("#xueliPhoto").css({"left": imgLeft + "px", "top": imgTop + "px"});
+                //                });
+            </script>
+        </div>
+    </div>
+</div>
+
+<div class="foot" id="footer"><a href="http://chesicc.moe.edu.cn/zxgw/zxjs/201604/20160418/1529506207.html"
+                                 target="_blank">中心简介</a> － <a href="/about/about_site.shtml" target="_blank">网站简介</a> －
+    <a href="/about/contact.shtml" target="_blank">联系我们</a> － <a href="/zhaopin/index.jsp" target="_blank">招聘信息</a> － <a
+            href="/about/copyright.shtml" target="_blank">版权声明</a> － <a href="/ad/index.shtml" target="_blank">网站广告</a>
+    － <a href="/help/" target="_blank">帮助中心</a> － <a href="/help/wzdh.jsp" target="_blank">网站导航</a> － <a
+            href="/z/tenyears/index.jsp" target="_blank">学信十周年</a><br/>
+    主办单位：学信网　客服热线：010-82199588　客服邮箱：kefu#chsi.com.cn（将#替换为@）　Copyright © 2003-2017 学信网
+</div>
+<script type="text/javascript">
+    function footerPst(id1, id2) {
+        var subH = document.documentElement.clientHeight - document.body.offsetHeight;
+        if (document.getElementById("footer") && document.getElementById(id1) && subH > 0) {
+            var leftH = document.getElementById(id1).offsetHeight;
+            var rightH = 0;
+            if (document.getElementById(id2)) {
+                rightH = document.getElementById(id2).offsetHeight;
+            } else {
+                leftH = (leftH > 443) ? leftH : 443;//for news,news_right changed, the number change
+            }
+            if (leftH > rightH) {
+                document.getElementById(id1).style.height = leftH + subH - 20 + "px";
+            } else {
+                document.getElementById(id2).style.height = rightH + subH - 20 + "px";
+            }
+        }
+    }
+    footerPst("leftH", "rightH");
+    footerPst("leftMenu", "rightCnt");
+    footerPst("leftHeight", "");
+</script>
+<script type="text/javascript">
+    $(function () {
+        //弹出打印等窗口
+        $("#openerHref").click(function () {
+            $("#noenreport").toggle();
+            $("#xxewm").hide();
+            $("#emailBox").hide();
+            return false;
+        });
+    });
+</script>
+<script src="../js/detail.js"></script>
+</body>
+</html>
