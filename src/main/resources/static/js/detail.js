@@ -9,7 +9,6 @@ $.ajax({
     url: "/resume/get/"+id_ ,
     type: 'POST'
 }).done(function(res) {
-    $(".main").removeClass("hide");
     var formList=res.data;
     $.each($(".fill-data"),function (i, v) {
         var that=$(v);
