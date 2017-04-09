@@ -1,6 +1,7 @@
 package com.fish.learn.controller;
 
 import com.fish.learn.dao.ResumeDao;
+import com.fish.learn.dto.Paging;
 import com.fish.learn.dto.Response;
 import com.fish.learn.model.Resume;
 import org.apache.commons.io.IOUtils;
@@ -22,6 +23,12 @@ public class ResumeController extends BaseController {
 
     @Autowired
     private ResumeDao resumeDao;
+
+    @RequestMapping("/paging/{pageNo}/{pageSize}")
+    @ResponseBody
+    public Response<Paging<Resume>> paging(@PathVariable("pageNo")Integer pageNo, @PathVariable("pageSize")Integer pageSize) throws Exception{
+        return Response.ok(resumeDao.paging( pageNo , pageSize ));
+    }
 
     @RequestMapping("/get/{id}")
     @ResponseBody

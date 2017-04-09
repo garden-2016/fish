@@ -11,6 +11,11 @@ import lombok.Data;
 public class Resume extends BaseModel{
 
     /**
+     * 姓名
+     */
+    private String name;
+
+    /**
      * 姓名图片
      */
     private String nameImg;
@@ -109,5 +114,10 @@ public class Resume extends BaseModel{
      * 毕业日期
      */
     private String graduationTime;
+
+    /**
+     * 院系
+     */
+    private String department;
 
 }

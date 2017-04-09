@@ -2,8 +2,7 @@ package com.fish.learn.dao;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.fish.learn.cache.CacheHandle;
-import com.fish.learn.cache.CacheOption;
+import com.fish.learn.dto.Paging;
 import com.fish.learn.model.BaseModel;
 import com.fish.learn.model.Resume;
 import lombok.Getter;
@@ -70,6 +69,13 @@ public class BaseJsonDao<T extends BaseModel> {
     //@CacheHandle( CacheOption.SELECT )
     public List<T> getAll() throws Exception{
         return JSONArray.parseArray( this.getSourceAsString() , this.getParameterizedType() );
+    }
+
+    public Paging<T> paging(Integer pageNo , Integer pageSize) throws Exception{
+        List<T> allData = JSONArray.parseArray( this.getSourceAsString() , this.getParameterizedType() );
+        Paging page = new Paging();
+        page.buildPaging( allData , pageNo , pageSize );
+        return page;
     }
 
     /**
