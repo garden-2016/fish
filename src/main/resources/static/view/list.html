@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        th{
+            width: 100px;
+            text-align: left;
+        }
+        td,th{
+            padding: 5px;
+        }
+        select{
+            padding: 3px 10px;
+        }
+    </style>
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<body>
+    <div style="padding-top: 50px;padding-bottom: 50px">
+        <div style="width: 1024px;margin: auto;">
+            <table id="list-table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>名字</th>
+                    <th>性别</th>
+                    <th>毕业院校</th>
+                    <th>专业</th>
+                    <th>形式</th>
+                    <th>二维码</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="2" style="text-align: right">
+                        共
+                        <span class="total">
+                            0
+                        </span>
+                        条&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td colspan="6">
+                        第
+                        <select id="pageNo">
+                            <option value="1">1</option>
+                        </select>
+                        页 &nbsp;&nbsp;&nbsp;&nbsp;
+                        每页共
+                        <select id="pageSize">
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>条&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="button" class="jump" style="padding: 5px">
+                            jump
+                        </button>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <script src="../js/list.js"></script>
+</body>
+</html>

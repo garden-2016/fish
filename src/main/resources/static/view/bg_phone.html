@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>教育部学历证书电子注册备案表</title>
+    <link rel="stylesheet" type="text/css" href="../css/materialize.min.css"/>
+    <link rel="stylesheet" href="../css/wap_md.min.css"/>
+</head>
+
+<body>
+<div class='page-wrapper'>
+    <div class='pw-content'>
+        <div class="container">
+            <div class="row valign-wrapper padTop" id='xl-top'>
+                <script type="text/javascript" src='//code.jquery.com/jquery-1.9.1.js'></script>
+                <script type="text/javascript" src='../js/materialize.min.js'></script>
+                <div class="col s9  ">
+                    <script>
+                        $(document).ready(function(){
+                            sel_lang();
+                        });
+                        function sel_lang(){
+                            var srcid = "pdf";
+                            var srcidParam = srcid.length ==0 ? "" : "&srcid=" +srcid ;
+                            $("#change_label").on("click", function () {
+                                if($("#change_lang").is(":checked")){
+                                    //英文
+                                    window.location.href="http://www.chsi.com.cn/xlcx/bg.do?vcode=289477108883&ln=en" + srcidParam;
+                                }else{
+                                    //中文
+                                    window.location.href="http://www.chsi.com.cn/xlcx/bg.do?vcode=289477108883&ln=cn" + srcidParam;
+                                }
+                            });
+                            if($("#change_lang").attr("checked")=="checked"){
+                                $('.lever-cilcle').css( "left","24px");
+                            }else{
+                                $('.lever-cilcle').css( "left","-5px");
+                            }
+                        }
+                    </script>
+                    <div class="switch noenEn">报告语种：
+                        <label><a href="#">中文</a>
+                            <input disabled type="checkbox">
+                            <a class="modal-trigger" href="#noenreport"><span class="new-lever"><span class="lever-cilcle"></span></span>英文</a>
+                        </label>
+                    </div>
+                    <div id="noenreport" class="modal" style="width:90%">
+                        <div class="modal-content" style="padding-bottom:0">
+                            该备案表尚无对应的英文版，<span onClick="window.location.href='http://www.chsi.com.cn/xlcx/rhsq.jsp#rhsqxl_en'" class='nr-detail'>如何申请</span>
+                        </div>
+                        <div class="modal-footer">
+                            <span class=" modal-action modal-close btn-flat">关闭</span>
+                        </div>
+                    </div>
+
+                    <script type="text/javascript">
+                        /* $(function() {
+                         $("#openerHref").click(function(){
+                         $("#noenreport").show();
+                         $('.pw-chooseLan').find('a').removeClass('current').end().end().find('#openerHref').addClass('current');
+                         return false;
+                         });
+                         $(window.document||window.document.body).click(function(){
+                         var $dialog = $('#noenreport:not(:hidden)');
+                         if($dialog.length!=0){
+                         $dialog.hide().prev('#openerHref').removeClass('current');
+                         $('.pw-chooseLan a:eq(0)').addClass('current');
+                         }
+                         });
+                         });*/
+                        $(function(){
+                            $('.modal-trigger').leanModal({
+                                dismissible: true, // 点击模态框外部则关闭模态框
+                                opacity: 0, // 背景透明度
+                                in_duration: 300, // 切入时间
+                                out_duration: 200, // 切出时间
+                            });
+                        });
+                    </script>
+
+
+
+
+                </div>
+                <script>
+                    $(function(){
+                        var wechatInfo = navigator.userAgent.match(/MicroMessenger\/([\d\.]+)/i) ;
+                        if( wechatInfo ) {
+                            $('.switch').hide();
+                        }
+                    })
+                </script>
+                <!--<div class='pw-info-pc'><a href="/xlcx/bg.do?vcode=289477108883&amp;ln=cn&amp;lang=cn&goto=pc">电脑版</a></div> -->
+                <div class="col s3 ">
+                    <img src="../images/search_pdf.png"  alt="下载PDF" title="下载PDF" class='responsive-img waves-effect waves-teal right z-depth-1 down_psf' />
+                </div>
+
+
+            </div>
+            <h5 class="center-align padBot">教育部学历证书电子注册备案表</h5>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <img class='waves-effect waves-teal z-depth-1 h_img_size fill-data' id="xueliPhoto" src='' data-caption='个人头像' data-fill="nameImg"/>
+                </div>
+            </div>
+        </div>
+        <div class="collection card">
+            <div class="row collection-item"><div class="col s4 bolder " >姓名：</div><div class="col s8 fill-data" data-fill="name">闾国</div></div>
+            <div class="row collection-item"><div class="col s4 bolder ">性别：</div><div class="col s8 fill-data" data-fill="gender">男</div></div>
+            <div class="row collection-item"><div class="col s4 bolder ">出生日期：</div><div class="col s8 fill-data" data-fill="birthday">1986年7月27日</div></div>
+        </div>
+        <div class="collection card">
+            <div class="row collection-item"><div class="col s4 bolder ">入学时间：</div><div class="col s8 fill-data" data-fill="joinTime">2010年3月1日</div></div>
+            <div class="row collection-item"><div class="col s4 bolder ">毕业时间：</div><div class="col s8 fill-data" data-fill="graduationTime">2012年7月1日</div></div>
+            <div class="row collection-item"><div class="col s4 bolder ">学历类型：</div><div class="col s8 fill-data" data-fill="educationType">网络教育</div></div>
+            <div class="row collection-item"><div class="col s4 bolder ">学历层次：</div><div class="col s8 fill-data" data-fill="educationLevel">专科</div></div>
+            <div class="row collection-item"><div class="col s4 bolder ">毕业院校：</div><div class="col s8 fill-data" data-fill="school">中国地质大学(武汉)</div></div>
+            <div class="row collection-item"><div class="col s4 bolder ">院校所在地：</div><div class="col s8 fill-data" data-fill="schoolAddr">湖北省</div></div>
+            <div class="row collection-item"><div class="col s4 bolder ">专业名称：</div><div class="col s8 fill-data" data-fill="major">建筑工程技术</div></div>
+            <div class="row collection-item"><div class="col s4 bolder ">学习形式：</div><div class="col s8 fill-data" data-fill="learnType">网络教育</div></div>
+            <div class="row collection-item"><div class="col s4 bolder ">证书编号：</div><div class="col s8 fill-data" data-fill="cardNo">1049 1720 1206 7521 16</div></div>
+            <div class="row collection-item"><div class="col s4 bolder ">毕结业结论：</div><div class="col s8 fill-data">毕业</div></div>
+        </div>
+
+        <div class="collection card">
+            <div class="row collection-item"><div class="col s4 bolder ">在线验证码：</div><div class="col s8 fill-data" data-fill="verifyNo">2894 7710 8883</div></div>
+            <div class="row collection-item"><div class="col s4 bolder ">制表日期：</div><div class="col s8 fill-data" data-fill="createTime">2017年3月31日</div></div>
+            <div class="row collection-item"><div class="col s4 bolder ">验证期至：</div><div class="col s8 fill-data" data-fill="verifyTime">2017年9月26日</div></div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
