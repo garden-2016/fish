@@ -8,8 +8,16 @@ var id_= getUrlParam("id");
 $.ajax({
     url: "/resume/get/"+id_ ,
     type: 'POST',
-    data: submitData.data
 }).done(function(res) {
-    console.log(res);
+    var formList=res.data;
+    $.each($(".fill-data"),function (i, v) {
+        var that=$(v);
+        if(v.tagName=="IMG"){
+            that.attr("src",formList[that.attr("data-fill")]);
+        }else{
+            that.html(formList[that.attr("data-fill")]);
+        }
+    })
 }).fail(function(res) {
+
 });

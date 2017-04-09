@@ -53,7 +53,7 @@ function loadEndToDo () {
         var dataList={};
         $.each(data,function (i, v) {
             if(v.value){
-                if($(v.type=="file")){
+                if($v.type=="file"){
                     dataList[v.name]=$(v).attr("data-imgsrc");
                 }else{
                     dataList[v.name]=v.value;
