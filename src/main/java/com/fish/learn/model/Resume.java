@@ -91,33 +91,13 @@ public class Resume extends BaseModel{
     private String verifyImg;
 
     /**
-     * 民族
+     * 头像
      */
-    private String nations;
-
-    /**
-     * 班级
-     */
-    private String classNo;
-
-    /**
-     * 学号
-     */
-    private String studentId;
-
-    /**
-     * 学制
-     */
-    private String entrance;
+    private String portrait;
 
     /**
      * 毕业日期
      */
     private String graduationTime;
-
-    /**
-     * 院系
-     */
-    private String department;
 
 }

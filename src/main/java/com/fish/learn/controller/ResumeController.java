@@ -43,14 +43,15 @@ public class ResumeController extends BaseController {
         return Response.ok();
     }
 
-    @RequestMapping("/add")
+    @RequestMapping( value =  {"/add"} , method = RequestMethod.POST )
     @ResponseBody
     public Response<Integer> insertById(@RequestBody Resume resume ) throws Exception{
         int id = resumeDao.insert(resume);
-        String fileUrl = this.verifyImgFileUrl(id);
+        StringBuffer imageUrl = new StringBuffer();
+        String fileUrl = this.verifyImgFileUrl(id , imageUrl);
         String showUrl = this.verifyImgShowUrl(id);
         resumeDao.createVerifyImg( id , showUrl , fileUrl );
-        resume.setVerifyImg( showUrl );
+        resume.setVerifyImg( imageUrl.toString() );
         resumeDao.update( resume );
         return Response.ok(id);
     }
@@ -69,7 +70,7 @@ public class ResumeController extends BaseController {
         String hashFileName = StringUtils.join( UUID.randomUUID() , ".jpg" ) ;
         File fPath = new File(path);
         fPath.mkdirs();
-        String fileUrl = StringUtils.join( DO_MAIN , File.separator , IMG_PATH , File.separator , hashFileName );
+        String fileUrl = StringUtils.join( "http://" , DO_MAIN , File.separator , IMG_PATH , File.separator , hashFileName );
         FileOutputStream ops = new FileOutputStream( StringUtils.join( path , File.separator , hashFileName ) );
         IOUtils.copy( file.getInputStream() , ops );
         ops.flush();
