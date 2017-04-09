@@ -8,7 +8,7 @@ function loadEndToDo () {
     //上传框样式
     $(".js-upload-img").on("click",function () {
         var baseName=$(this).attr("data-img");
-        $('[name='+baseName+']').trigger("click");
+        $('[name='+baseName+']').val("").trigger("click");
     });
     $(".js-upload").on("change",function () {
         //解决上传路径问题
@@ -21,11 +21,11 @@ function loadEndToDo () {
         // };
         // reader.readAsDataURL(node.files[0]);
         if(this.name){
-            upload_img(this.name);
+            upload_img(this.name,this);
         }
     });
     //上传
-    function upload_img(name) {
+    function upload_img(name,that) {
         var formData = new FormData();
         formData.append('file', $('[name='+name+']')[0].files[0]);
         $.ajax({
@@ -37,7 +37,8 @@ function loadEndToDo () {
             contentType: false
         }).done(function(res) {
             if(res){
-                $(".js-"+this.name+"-name").attr("src",res);
+                $(".js-"+name+"-name").attr("src",res.data);
+                $(that).attr("data-imgsrc",res.data);
             }else{
                 alert("呵呵,图片上传失败")
             }
@@ -52,7 +53,11 @@ function loadEndToDo () {
         var dataList={};
         $.each(data,function (i, v) {
             if(v.value){
-                dataList[v.name]=v.value;
+                if($(v.type=="file")){
+                    dataList[v.name]=$(v).attr("data-imgsrc");
+                }else{
+                    dataList[v.name]=v.value;
+                }
                 index++;
             }else {
                 errorList.push(v.name);
@@ -78,6 +83,7 @@ function loadEndToDo () {
             $.ajax({
                 url: url,
                 type: 'POST',
+                contentType:"application/json",
                 data: submitData.data
             }).done(function(res) {
                 alert("提交成功");
