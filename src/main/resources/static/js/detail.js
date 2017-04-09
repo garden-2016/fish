@@ -7,13 +7,16 @@ function getUrlParam(name){
 var id_= getUrlParam("id");
 $.ajax({
     url: "/resume/get/"+id_ ,
-    type: 'POST',
+    type: 'POST'
 }).done(function(res) {
+    $(".main").removeClass("hide");
     var formList=res.data;
     $.each($(".fill-data"),function (i, v) {
         var that=$(v);
         if(v.tagName=="IMG"){
             that.attr("src",formList[that.attr("data-fill")]);
+        }else if(that.hasClass("fordate")){
+            that.html(fortime(formList[that.attr("data-fill")]));
         }else{
             that.html(formList[that.attr("data-fill")]);
         }
@@ -21,3 +24,10 @@ $.ajax({
 }).fail(function(res) {
 
 });
+function fortime(data) {
+    if(data){
+        var dataList=data.split("-");
+        return dataList[0]+"年"+Number(dataList[1])+"月"+Number(dataList[2])+"日";
+    }
+    return "";
+}

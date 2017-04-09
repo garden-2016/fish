@@ -80,12 +80,14 @@ function loadEndToDo () {
             if(submitData.data.id){
                 url="/resume/update"
             }
+            $("#looklook").addClass("hide")
             $.ajax({
                 url: url,
                 type: 'POST',
                 contentType:"application/json",
                 data: JSON.stringify(submitData.data)
             }).done(function(res) {
+                $("#looklook").attr("href","/view/bg.html?id="+res.data).removeClass("hide");
                 alert("提交成功");
             }).fail(function(res) {
                 alert("提交失败");

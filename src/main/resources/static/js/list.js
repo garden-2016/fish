@@ -5,13 +5,13 @@ function load() {
         url: "/resume/paging/"+pageNo+"/"+pageSize ,
         type: 'get'
     }).done(function(res) {
-        var total=res.count;
+        var total=res.data.count;
         var pageNoLen=Math.ceil(total/pageSize);
         var pageNoOption="";
-        var data=res.data;
+        var data=res.data.data;
         var tbodyContent="";
         $.each(data,function (i, v) {
-            tbodyContent+="<td>"+v.id+"</td><td>"+v.name+"</td><td>"+v.gender+"</td><td>"+v.school+"</td><td>"+v.major+"</td><td>"+v.learnType+"</td><td><a href='"+v.verifyImg+"'>下载二维码</a></td><td><a class='del-btn' href='javascript:;' data-id="+v.id+">删除</a><a href='/static/view/list.html?id='"+v.id+">详情</a></td>"
+            tbodyContent+="<tr></tr><td>"+v.id+"</td><td>"+v.name+"</td><td>"+v.gender+"</td><td>"+v.school+"</td><td>"+v.major+"</td><td>"+v.learnType+"</td><td><a href='"+v.verifyImg+"'>下载二维码</a></td><td><a class='del-btn' href='javascript:;' data-id="+v.id+">删除</a><a href='/static/view/list.html?id='"+v.id+">详情</a></td></tr>"
         });
         $(".total").html(total);
         if(pageNoLen>0){
@@ -41,6 +41,7 @@ $("#list-table").on("click",".del-btn",function () {
         }else{
             alert("删除失败");
         }
+        load();
     }).fail(function(res) {
 
     });

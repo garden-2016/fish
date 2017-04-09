@@ -310,6 +310,9 @@
             height: 68px;
             text-align: right;
         }
+        .hide{
+            display: none;
+        }
     </style>
 
 
@@ -444,7 +447,7 @@
         return true;
     }
 </script>
-<div class="main clearfix">
+<div class="main clearfix hide">
     <div class="m_yah"><a href="/">首页</a> &gt; <a href="http://www.chsi.com.cn/xlcx/bgcx.jsp">学籍/学历在线验证报告</a> &gt; 教育部学历证书电子注册备案表</div>
     <div class="m_s_l" id="leftMenu">
         <ul class="m_s_l_ul">
@@ -525,7 +528,7 @@
                                 <th>姓　　名</th>
                                 <td colspan="3">
                                     <!--姓名-->
-                                    <img src="../images/namebg.jpg" alt="" width="402" height="43" class="fill-data" data-fill="nameImg">
+                                    <img src="" alt="" width="402" height="43" class="fill-data" data-fill="nameImg">
                                 </td>
                                 <td rowspan="4">
                                     <div class="cn_photo1" id="xueli_photo_div">
@@ -540,33 +543,33 @@
                                     <div style="width:90px;">性　　别</div>
                                 </th>
                                 <td>
-                                    <span id="xb" style="width:166px;" class="fill-data" data-fill="gender">男</span>
+                                    <span id="xb" style="width:166px;" class="fill-data" data-fill="gender"></span>
                                 </td>
                                 <th>
                                     <div style="width:90px;">出生日期</div>
                                 </th>
                                 <td>
-                                    <span style="width:134px;" class="fill-data" data-fill="birthday">1986年7月27日</span>
+                                    <span style="width:134px;" class="fill-data fordate" data-fill="birthday"></span>
                                 </td>
                             </tr>
                             <tr>
                                 <th>入学时间</th>
                                 <td>
-                                    <span class="fill-data" data-fill="joinTime">2010年3月1日</span>
+                                    <span class="fill-data fordate" data-fill="joinTime"></span>
                                 </td>
                                 <th>毕业时间</th>
                                 <td>
-                                    <span class="fill-data" data-fill="graduationTime">2012年7月1日</span>
+                                    <span class="fill-data fordate" data-fill="graduationTime"></span>
                                 </td>
                             </tr>
                             <tr>
                                 <th>学历类型</th>
                                 <td>
-                                    <span class="fill-data" data-fill="educationType">网络教育</span>
+                                    <span class="fill-data" data-fill="educationType"></span>
                                 </td>
                                 <th>学历层次</th>
                                 <td>
-                                    <span class="fill-data" data-fill="educationLevel">专科</span>
+                                    <span class="fill-data" data-fill="educationLevel"></span>
                                 </td>
                             </tr>
                             <tr>
@@ -582,29 +585,29 @@
                                     <div style="width:90px;">毕业院校</div>
                                 </th>
                                 <td>
-                                    <span style="width:296px;" class="fill-data" data-fill="school">中国地质大学(武汉)</span>
+                                    <span style="width:296px;" class="fill-data" data-fill="school"></span>
                                 </td>
                                 <th>
                                     <div style="width:100px;">院校所在地</div>
                                 </th>
                                 <td>
-                                    <span style="width:128" class="fill-data" data-fill="schoolAddr">湖北省</span>
+                                    <span style="width:128" class="fill-data" data-fill="schoolAddr"></span>
                                 </td>
                             </tr>
                             <tr>
                                 <th>专业名称</th>
                                 <td>
-                                    <span class="fill-data" data-fill="major">建筑工程技术</span>
+                                    <span class="fill-data" data-fill="major"></span>
                                 </td>
                                 <th class="cn_font1">学习形式</th>
                                 <td>
-                                    <span class="fill-data" data-fill="learnType">网络教育</span>
+                                    <span class="fill-data" data-fill="learnType"></span>
                                 </td>
                             </tr>
                             <tr>
                                 <th>证书编号</th>
                                 <td class="cn_font2">
-                                    <span class="fill-data" data-fill="cardNo">1049 1720 1206 7521 16</span>
+                                    <span class="fill-data" data-fill="cardNo"></span>
                                 </td>
                                 <th>毕结业结论</th>
                                 <td>
@@ -622,19 +625,19 @@
                                 </td>
                                 <th>在线验证码</th>
                                 <td class="cn_font2">
-                                    <span class="fill-data" data-fill="verifyNo">2894 7710 8883</span>
+                                    <span class="fill-data" data-fill="verifyNo"></span>
                                 </td>
                             </tr>
                             <tr>
                                 <th class="cn_font1">制表日期</th>
                                 <td>
-                                    <span class="fill-data" data-fill="createTime">2017年3月31日</span>
+                                    <span class="fill-data fordate" data-fill="createTime"></span>
                                 </td>
                             </tr>
                             <tr>
                                 <th class="cn_font1">验证期至</th>
                                 <td>
-                                    <span class="fill-data" data-fill="verifyTime">2017年9月26日</span>
+                                    <span class="fill-data fordate" data-fill="verifyTime"></span>
                                 </td>
                             </tr>
                             <tr>
@@ -687,7 +690,7 @@
             <!--<script type="text/javascript" encoding="utf-8" src='http://t2.chei.com.cn/chsi/js/report/send_email_cn.js'></script>-->
 
             <script type="text/javascript" src='../js/util.js'></script>
-            <script src="http://t1.chei.com.cn/common/js/snsshare.js?20160531" type="text/javascript"></script>
+            <script src="../js/snsshare.js?20160531" type="text/javascript"></script>
             <div id="share"></div>
             <script type="text/javascript">
                 var s = new SnsShare("share");
