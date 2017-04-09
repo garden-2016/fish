@@ -20,9 +20,10 @@ import java.util.List;
  */
 public class BaseJsonDao<T extends BaseModel> {
 
-    public final static String BASE_DB_PATH = ClassLoader.getSystemResource("db-json").getPath();
+    public final static String BASE_DB_PATH = "/root/fish-learn/db-json";//"/Users/OutDog/deploy/fish/db-json";
 
     /**
+     *
      * 服务器上数据库真实地址
      */
     @Getter
@@ -144,6 +145,5 @@ public class BaseJsonDao<T extends BaseModel> {
         }
         return null;
     }
-
 
 }

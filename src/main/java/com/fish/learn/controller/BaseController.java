@@ -14,12 +14,12 @@ public abstract class BaseController {
     /**
      * 主域名
      */
-    protected final static String DO_MAIN = "shci.cn.com";
+    protected final static String DO_MAIN = "/root/fish-learn";//"shci.cn.com";
 
     /**
      * 图频存储根路径
      */
-    protected final static String ROOT_IMG_PATH = StringUtils.join( ClassLoader.getSystemResource("").getPath() , "static" , File.separator , "images" , File.separator , "user" );
+    protected final static String ROOT_IMG_PATH = "/Users/OutDog/deploy/fish/images/user";//StringUtils.join( ClassLoader.getSystemResource("").getPath() , "static" , File.separator , "images" , File.separator , "user" );
 
     /**
      * 图片存储相对路径
@@ -40,8 +40,11 @@ public abstract class BaseController {
      * @param id
      * @return
      */
-    protected final String verifyImgFileUrl(int id){
-        return StringUtils.join( ROOT_IMG_PATH , id , File.separator , UUID.randomUUID().toString() , "jpg");
+    protected final String verifyImgFileUrl(int id , StringBuffer imageUrl){
+        String fileName = StringUtils.join(UUID.randomUUID().toString() , ".jpg");
+        imageUrl.append( StringUtils.join( "http://" , DO_MAIN , File.separator , IMG_PATH ,File.separator , id , File.separator , fileName )  );
+        new File(StringUtils.join( ROOT_IMG_PATH , File.separator , id )).mkdirs();
+        return StringUtils.join( ROOT_IMG_PATH , File.separator , id , File.separator , fileName);
     }
 
 }
