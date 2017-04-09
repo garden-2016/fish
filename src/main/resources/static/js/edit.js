@@ -84,7 +84,7 @@ function loadEndToDo () {
                 url: url,
                 type: 'POST',
                 contentType:"application/json",
-                data: submitData.data
+                data: JSON.stringify(submitData.data)
             }).done(function(res) {
                 alert("提交成功");
             }).fail(function(res) {
