@@ -24,7 +24,7 @@ function load() {
                 "<td>" +
                 "<a class='del-btn' href='javascript:;' data-id="+v.id+">删除</a>" +
                 "&nbsp;&nbsp;" +
-                "<a href='/static/view/list.html?id="+v.id+"'>详情</a>" +
+                "<a href='/view/bg.html?id="+v.id+"'>详情</a>" +
                 "</td>" +
                 "</tr>"
         });
